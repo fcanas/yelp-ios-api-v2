@@ -49,7 +49,9 @@
     [[[YLLocalSearch alloc] initWithMap:_mapView] localSearchWithTerm:@"pizza"
                                                               success:^(YLLocalSearchResponse *results) {
                                                                   NSLog(@"%@",results);
-                                                              }
+                                                                  [_mapView removeAnnotations:[_mapView annotations]];
+                                                                  [_mapView addAnnotations:[results businesses]];
+                                                               }
                                                               failure:^(NSError *error) {
                                                                   NSLog(@"%@",error);
                                                               }];

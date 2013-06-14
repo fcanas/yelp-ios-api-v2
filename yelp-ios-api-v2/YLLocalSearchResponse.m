@@ -7,6 +7,7 @@
 //
 
 #import "YLLocalSearchResponse.h"
+#import "YLBusiness.h"
 
 @interface YLLocalSearchResponse ()
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
@@ -22,14 +23,28 @@
         return nil;
     }
     
-    _businesses = yelp[@"businesses"];
+    NSMutableArray *a = [@[] mutableCopy];
+    
+    for (NSDictionary *bd in yelp[@"businesses"]) {
+        YLBusiness *b = [[YLBusiness alloc] init];
+        for (NSString *key in bd) {
+            @try {
+                [b setValue:bd[key] forKey:key];
+            }
+            @catch (NSException *exception) {
+                NSLog(@"Not Compliant for key %@", key);
+            }
+        }
+        [a addObject:b];
+    }
+    _businesses = [NSArray arrayWithArray:a];
     
     return self;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@",_businesses];
+    return [NSString stringWithFormat:@"%d Businesses:\n %@",_businesses.count, _businesses];
 }
 
 @end

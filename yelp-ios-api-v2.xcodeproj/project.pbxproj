@@ -32,6 +32,7 @@
 		E6B6FE7E176AF54B005B7C85 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B6FE7C176AF510005B7C85 /* MapKit.framework */; };
 		E6B6FE80176AF85B005B7C85 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B6FE7F176AF85B005B7C85 /* CoreLocation.framework */; };
 		E6B6FE83176B02D7005B7C85 /* YLLocalSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B6FE82176B02D7005B7C85 /* YLLocalSearchResponse.m */; };
+		E6B6FE86176B97CE005B7C85 /* YLBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B6FE85176B97CE005B7C85 /* YLBusiness.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		E6B6FE7F176AF85B005B7C85 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E6B6FE81176B02D7005B7C85 /* YLLocalSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLLocalSearchResponse.h; sourceTree = "<group>"; };
 		E6B6FE82176B02D7005B7C85 /* YLLocalSearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLLocalSearchResponse.m; sourceTree = "<group>"; };
+		E6B6FE84176B97CE005B7C85 /* YLBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLBusiness.h; sourceTree = "<group>"; };
+		E6B6FE85176B97CE005B7C85 /* YLBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLBusiness.m; sourceTree = "<group>"; };
 		FC1EA13B5CD7469AA962CE25 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -156,6 +159,8 @@
 				E6B6FE7A176AF226005B7C85 /* YLLocalSearch.m */,
 				E6B6FE81176B02D7005B7C85 /* YLLocalSearchResponse.h */,
 				E6B6FE82176B02D7005B7C85 /* YLLocalSearchResponse.m */,
+				E6B6FE84176B97CE005B7C85 /* YLBusiness.h */,
+				E6B6FE85176B97CE005B7C85 /* YLBusiness.m */,
 			);
 			path = "yelp-ios-api-v2";
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B6FE86176B97CE005B7C85 /* YLBusiness.m in Sources */,
 				E6B6FE7B176AF226005B7C85 /* YLLocalSearch.m in Sources */,
 				E675ABBB176AD56900C69F4F /* main.m in Sources */,
 				E675ABBF176AD56900C69F4F /* YLAppDelegate.m in Sources */,
