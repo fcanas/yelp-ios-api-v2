@@ -11,6 +11,4 @@
 
 @interface YLClient : AFOAuth1Client
 
-+ (instancetype)sharedInstance;
-
 @end

@@ -15,14 +15,9 @@
 
 static NSString *kYelpAPIURLString = @"http://api.yelp.com/v2";
 
-+ (instancetype)sharedInstance
+- (instancetype)init
 {
-    static dispatch_once_t once;
-    __strong static YLClient *_sharedClient = nil;
-    dispatch_once(&once, ^{
-        _sharedClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:kYelpAPIURLString]];
-    });
-    return _sharedClient;
+    return [self initWithBaseURL:[NSURL URLWithString:kYelpAPIURLString]];
 }
 
 - (instancetype)initWithBaseURL:(NSURL *)url {

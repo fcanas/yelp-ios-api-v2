@@ -35,7 +35,7 @@
                     success:(void(^)(YLLocalSearchResponse* response)) success
                     failure:(void(^)(NSError* error)) failure
 {
-    YLClient *client = [YLClient sharedInstance];
+    YLClient *client = [YLClient new];
     
     NSMutableDictionary *paramDictionary = [[self boundingBoxFromMapRect] mutableCopy];
     [paramDictionary addEntriesFromDictionary:@{@"term": searchTerm}];

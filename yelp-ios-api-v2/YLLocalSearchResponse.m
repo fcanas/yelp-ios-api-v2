@@ -29,7 +29,7 @@
 
 - (NSString *)description
 {
-    [NSString stringWithFormat:@"%@",_businesses];
+    return [NSString stringWithFormat:@"%@",_businesses];
 }
 
 @end
