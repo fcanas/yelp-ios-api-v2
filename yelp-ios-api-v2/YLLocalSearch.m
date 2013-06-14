@@ -8,7 +8,14 @@
 
 #import "YLLocalSearch.h"
 #import "YLClient.h"
+#import "YLLocalSearchResponse.h"
+
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
+@interface YLLocalSearchResponse ()
+- (instancetype)initWithV2Dictionary:(NSDictionary *)yelp;
+@end
 
 @implementation YLLocalSearch
 
@@ -25,7 +32,7 @@
 }
 
 - (void)localSearchWithTerm:(NSString *)searchTerm
-                    success:(void(^)(NSArray* results)) success
+                    success:(void(^)(YLLocalSearchResponse* response)) success
                     failure:(void(^)(NSError* error)) failure
 {
     YLClient *client = [YLClient sharedInstance];
@@ -35,7 +42,7 @@
     
     [client getPath:@"search" parameters:paramDictionary
             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                success?success(responseObject):0;
+                success?success([[YLLocalSearchResponse alloc] initWithV2Dictionary:responseObject]):0;
             }
             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 failure?failure(error):0;
@@ -44,18 +51,13 @@
 
 - (NSDictionary *)boundingBoxFromMapRect
 {
-    {
-        MKMapRect mapRect = _mapView.visibleMapRect;
-        CLLocationCoordinate2D nw = MKCoordinateForMapPoint(mapRect.origin);
-
-        MKMapPoint southEastMapPoint = (MKMapPoint) { .x = mapRect.origin.x + mapRect.size.width, .y = mapRect.origin.y + mapRect.size.height };
-        CLLocationCoordinate2D se = MKCoordinateForMapPoint(southEastMapPoint);
-        
-        CLLocationCoordinate2D sw = CLLocationCoordinate2DMake(se.latitude, nw.longitude);
-        CLLocationCoordinate2D ne = CLLocationCoordinate2DMake(nw.latitude, se.longitude);
-        
-        return @{@"bounds": [NSString stringWithFormat:@"%f,%f|%f,%f",sw.latitude,sw.longitude,ne.latitude,ne.longitude]};
-    }
+    MKMapRect mapRect = _mapView.visibleMapRect;
+    CLLocationCoordinate2D nw = MKCoordinateForMapPoint(mapRect.origin);
+    
+    MKMapPoint southEastMapPoint = (MKMapPoint) { .x = mapRect.origin.x + mapRect.size.width, .y = mapRect.origin.y + mapRect.size.height };
+    CLLocationCoordinate2D se = MKCoordinateForMapPoint(southEastMapPoint);
+    
+    return @{@"bounds": [NSString stringWithFormat:@"%f,%f|%f,%f",se.latitude,nw.longitude,nw.latitude,se.longitude]};
 }
 
 @end

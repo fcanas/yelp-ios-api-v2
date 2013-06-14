@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
+
+@class MKMapView;
+@class YLLocalSearchResponse;
 
 @interface YLLocalSearch : NSObject
 
@@ -16,7 +18,7 @@
 - (instancetype)initWithMap:(MKMapView *)mapView;
 
 - (void)localSearchWithTerm:(NSString *)searchTerm
-                    success:(void(^)(NSArray* results)) success
+                    success:(void(^)(YLLocalSearchResponse* response)) success
                     failure:(void(^)(NSError* error)) failure;
 
 @end

@@ -9,6 +9,7 @@
 #import "YLMasterViewController.h"
 #import "YLDetailViewController.h"
 #import "YLLocalSearch.h"
+#import "YLLocalSearchResponse.h"
 
 
 
@@ -41,13 +42,12 @@
     CGRect searchBarFrame = (CGRect){.origin=CGPointZero, .size.width=320, .size.height=44};
     self.navigationItem.titleView = [[UISearchBar alloc] initWithFrame:searchBarFrame];
     
-
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
     [[[YLLocalSearch alloc] initWithMap:_mapView] localSearchWithTerm:@"pizza"
-                                                              success:^(NSArray *results) {
+                                                              success:^(YLLocalSearchResponse *results) {
                                                                   NSLog(@"%@",results);
                                                               }
                                                               failure:^(NSError *error) {
