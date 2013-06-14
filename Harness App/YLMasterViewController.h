@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @class YLDetailViewController;
 
-@interface YLMasterViewController : UIViewController
+@interface YLMasterViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) YLDetailViewController *detailViewController;
 

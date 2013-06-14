@@ -7,11 +7,14 @@
 //
 
 #import "YLMasterViewController.h"
-
 #import "YLDetailViewController.h"
+#import "YLLocalSearch.h"
+
+
 
 @interface YLMasterViewController () {
     NSMutableArray *_objects;
+    MKMapView *_mapView;
 }
 @end
 
@@ -30,8 +33,26 @@
 {
     [super viewDidLoad];
     
+    _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_mapView];
+    [_mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(37, -122), 30, 30)];
+    [_mapView setDelegate:self];
+    
     CGRect searchBarFrame = (CGRect){.origin=CGPointZero, .size.width=320, .size.height=44};
     self.navigationItem.titleView = [[UISearchBar alloc] initWithFrame:searchBarFrame];
+    
+
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [[[YLLocalSearch alloc] initWithMap:_mapView] localSearchWithTerm:@"pizza"
+                                                              success:^(NSArray *results) {
+                                                                  NSLog(@"%@",results);
+                                                              }
+                                                              failure:^(NSError *error) {
+                                                                  NSLog(@"%@",error);
+                                                              }];
 }
 
 @end

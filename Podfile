@@ -1,2 +1,4 @@
-platform :ios, '7.0'
+platform :ios, '5.0'
 pod 'AFNetworking', '>=1.2'
+pod 'AFOAuth1Client'
+pod 'GHKit'

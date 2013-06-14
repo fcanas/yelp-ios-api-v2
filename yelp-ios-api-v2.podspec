@@ -12,6 +12,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.source_files = 'yelp-ios-api-v2'
   s.framework  = 'MapKit'
+  s.framework  = 'CoreLocation'
   s.requires_arc = true
   s.dependency 'AFNetworking', '>=1.2'
+  s.dependency 'AFOAuth1Client'
 end
