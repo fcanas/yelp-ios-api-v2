@@ -25,16 +25,11 @@
     
     NSMutableArray *a = [@[] mutableCopy];
     
+    
+    
     for (NSDictionary *bd in yelp[@"businesses"]) {
         YLBusiness *b = [[YLBusiness alloc] init];
-        for (NSString *key in bd) {
-            @try {
-                [b setValue:bd[key] forKey:key];
-            }
-            @catch (NSException *exception) {
-                NSLog(@"Not Compliant for key %@", key);
-            }
-        }
+        [b setValuesForKeysWithDictionary:bd];
         [a addObject:b];
     }
     _businesses = [NSArray arrayWithArray:a];

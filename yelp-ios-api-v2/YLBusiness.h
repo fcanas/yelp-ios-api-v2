@@ -26,7 +26,8 @@
 @property (nonatomic, strong) NSString *snippet_text;
 @property (nonatomic, strong) NSString *snippet_image_url;
 @property (nonatomic, strong) NSDictionary *location;
-
-
+@property (nonatomic, strong) NSString *rating_img_url;
+@property (nonatomic, strong) NSString *rating_img_url_small;
+@property (nonatomic, strong) NSString *rating_img_url_large;
 
 @end
