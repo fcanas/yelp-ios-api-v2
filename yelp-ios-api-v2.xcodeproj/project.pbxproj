@@ -83,6 +83,7 @@
 		E6B6FE82176B02D7005B7C85 /* YLLocalSearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLLocalSearchResponse.m; sourceTree = "<group>"; };
 		E6B6FE84176B97CE005B7C85 /* YLBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLBusiness.h; sourceTree = "<group>"; };
 		E6B6FE85176B97CE005B7C85 /* YLBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLBusiness.m; sourceTree = "<group>"; };
+		E7302695176E5E1A00C4947B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FC1EA13B5CD7469AA962CE25 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -117,6 +118,7 @@
 		E675ABA2176AD56900C69F4F = {
 			isa = PBXGroup;
 			children = (
+				E7302695176E5E1A00C4947B /* README.md */,
 				E675ABF6176AD92000C69F4F /* Podfile */,
 				E675ABF5176AD5C900C69F4F /* Harness App */,
 				E675ABB4176AD56900C69F4F /* yelp-ios-api-v2 */,

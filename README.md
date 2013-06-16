@@ -5,9 +5,32 @@ This project is an iOS client that consumes the [Yelp search API v2](http://www.
 ## Status
 Do not use this project. I began working on it on Thursday, June 13th. It is not ready for public consumption.
 
+## Usage
+
+### Add to Project with [CocoaPods](http://cocoapods.org/)
+
+*This project is not yet available as a pod on the main CocoaPods repository. But it will be soon.*
+
+1. Add `yelp-ios-api-v2` as a pod. 
+2. Add a `YelpKeys.plist` to your project, and populate it with _your_ Yelp api keys. A sample, empty `YelpKeys.plist` file is included in this project. Keys are available by registering with Yelp and [requesting keys](http://www.yelp.com/developers/documentation/v2/authentication).
+
+### Code
+
+Here's a simple example of how you might perform a search with a map's bounds and display those results on the map.
+
+    YLLocalSearch *search = [[YLLocalSearch alloc] initWithMap:_mapView];
+    [search localSearchWithTerm:@"pizza"
+                        success:^(YLLocalSearchResponse *results) {
+                            [_mapView removeAnnotations:[_mapView annotations]];
+                            [_mapView addAnnotations:[results businesses]];
+                        }
+                        failure:^(NSError *error) {
+                            NSLog(@"Oh noes! %@",error);
+                        }];
+
 ## TODO
 * ~~OAuth~~
 * ~~Search~~
 * Model Objects
-  * Search should return model objects
+  * ~~Search should return model objects~~
   * Model objects should be useful for displaying in an `MKMapView`
