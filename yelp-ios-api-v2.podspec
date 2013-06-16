@@ -14,6 +14,5 @@ Pod::Spec.new do |s|
   s.framework  = 'MapKit'
   s.framework  = 'CoreLocation'
   s.requires_arc = true
-  s.dependency 'AFNetworking', '>=1.2'
   s.dependency 'AFOAuth1Client'
 end
