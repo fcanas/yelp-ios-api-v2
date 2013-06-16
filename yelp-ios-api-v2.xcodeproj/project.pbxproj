@@ -127,7 +127,9 @@
 				E675ABAC176AD56900C69F4F /* Products */,
 				FC1EA13B5CD7469AA962CE25 /* Pods.xcconfig */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		E675ABAC176AD56900C69F4F /* Products */ = {
 			isa = PBXGroup;
