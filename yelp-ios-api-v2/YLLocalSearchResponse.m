@@ -28,8 +28,7 @@
     
     
     for (NSDictionary *bd in yelp[@"businesses"]) {
-        YLBusiness *b = [[YLBusiness alloc] init];
-        [b setValuesForKeysWithDictionary:bd];
+        YLBusiness *b = [[YLBusiness alloc] initWithDictionary:bd];
         [a addObject:b];
     }
     _businesses = [NSArray arrayWithArray:a];

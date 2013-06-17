@@ -11,6 +11,9 @@
 
 @interface YLBusiness : NSObject <MKAnnotation>
 
+@property (nonatomic, readonly, assign) BOOL isReady;
+@property (nonatomic, readonly, assign) BOOL isFullyHydrated;
+
 @property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSValue *is_closed;
 @property (nonatomic, strong) NSValue *is_claimed;
@@ -29,5 +32,12 @@
 @property (nonatomic, strong) NSString *rating_img_url;
 @property (nonatomic, strong) NSString *rating_img_url_small;
 @property (nonatomic, strong) NSString *rating_img_url_large;
+
++ (instancetype)businessWithId:(NSString *)yelpId;
+
+- (instancetype)initWithDictionary:(NSDictionary *)businessDictionary;
+
+- (void)hydrateFromYelpWithCompletion:(void(^)(BOOL complete, NSError *error))completionBlock;
+
 
 @end

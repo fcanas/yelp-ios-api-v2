@@ -8,7 +8,6 @@
 
 #import "YLClient.h"
 #import <AFNetworking/AFJSONRequestOperation.h>
-#import <GHKit/GHKit.h>
 #import <CommonCrypto/CommonCrypto.h>
 
 @implementation YLClient

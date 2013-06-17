@@ -34,3 +34,4 @@ Here's a simple example of how you might perform a search with a map's bounds an
 * Model Objects
   * ~~Search should return model objects~~
   * Model objects should be useful for displaying in an `MKMapView`
+* Locale Support
