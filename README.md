@@ -13,8 +13,14 @@ Work on this project has been stalled just three days in by Yelp [apparently rem
 
 *This project is not yet available as a pod on the main CocoaPods repository. But it will be soon.*
 
-1. Add `yelp-ios-api-v2` as a pod. 
-2. Add a `YelpKeys.plist` to your project, and populate it with _your_ Yelp api keys. A sample, empty `YelpKeys.plist` file is included in this project. Keys are available by registering with Yelp and [requesting keys](http://www.yelp.com/developers/documentation/v2/authentication).
+1. Use [CocoaPods](http://cocoapods.org/) for your project
+2. ~~Add `yelp-ios-api-v2` as a pod.~~
+
+### Configure your keys
+
+1. Copy the sample empty `YelpKeys.plist` into your project.
+2. [Request keys from Yelp](http://www.yelp.com/developers/documentation/v2/authentication).
+2. Populate your `YelpKeys.plist` with _your_ Yelp api keys
 
 ### Code
 
