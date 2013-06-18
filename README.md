@@ -43,3 +43,9 @@ Here's a simple example of how you might perform a search with a map's bounds an
   * ~~Search should return model objects~~
   * Model objects should be useful for displaying in an `MKMapView`
 * Locale Support
+
+## Organization
+The focal components of the project are contained in the `yelp-ios-api-v2` directory. Classes and resources within this directory comprise the actual functionality of `yelp-ios-api-v2`.
+
+Just about everything else is part of a Harness app that excercises the features of `yelp-ios-api-v2`. Classes and resources for the harness reside in the `Harness App` directory.
+
