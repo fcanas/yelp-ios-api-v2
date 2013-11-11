@@ -49,3 +49,7 @@ The focal components of the project are contained in the `yelp-ios-api-v2` direc
 
 Just about everything else is part of a Harness app that excercises the features of `yelp-ios-api-v2`. Classes and resources for the harness reside in the `Harness App` directory.
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcanas/yelp-ios-api-v2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
